@@ -7,6 +7,9 @@ $ export FLASK_APP=app.py
 $ flask run
 ```
 
+# GIPHY API
+https://developers.giphy.com/docs/
+
 ## The Concept
 A search engine that uses the Giphy API to return a random loop of GIFs that fit the entered search terms.
 
