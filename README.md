@@ -1,6 +1,12 @@
 # giflooper
 A looper, for GIFs, for you.
 
+# To Run
+```
+$ export FLASK_APP=app.py
+$ flask run
+```
+
 ## The Concept
 A search engine that uses the Giphy API to return a random loop of GIFs that fit the entered search terms.
 

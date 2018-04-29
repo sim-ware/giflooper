@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 app = Flask(__name__)
 
@@ -17,8 +17,8 @@ def index():
 @app.route('/resultloop', methods=['POST'])
 def resultloop():
     # return 'Resultloop'
-    # searchterms = request.form['searchterms']
-    return render_template('resultloop.html')
+    searchterms = request.form['searchterms']
+    return render_template('resultloop.html', searchterms=searchterms)
 
 
 
