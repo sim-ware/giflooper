@@ -11,13 +11,18 @@ import json
 import requests
 
 YOUR_API_KEY = "02KjSiPr9Ur2Hizm8HsEdgB0NXPJiNBh"
+SEARCHTERMS = "doom"
 
-# data = json.loads(urllib.urlopen("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=" + YOUR_API_KEY + "&limit=5").read())
-# print json.dumps(data, sort_keys=True, indent=4)
+r = requests.get("http://api.giphy.com/v1/gifs/search?q=" + SEARCHTERMS + "&api_key=" + YOUR_API_KEY + "&limit=5")
 
-r = requests.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=" + YOUR_API_KEY + "&limit=5")
-# r.status_code
-# r.headers['content-type']
-# r.encoding
-print(r.text)
-print(r.json())
+# print(r.text[0])
+# print(r.json()[0])
+r = r.json()
+print(r['data'][0]['images']['original']['url'])
+
+# TODO:
+# Fetch 50 Results
+# TODO:
+# Return Random 25
+# TODO:
+# Loop through 25

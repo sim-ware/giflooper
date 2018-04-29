@@ -7,9 +7,6 @@ $ export FLASK_APP=app.py
 $ flask run
 ```
 
-# GIPHY API
-https://developers.giphy.com/docs/
-
 ## The Concept
 A search engine that uses the Giphy API to return a random loop of GIFs that fit the entered search terms.
 
@@ -21,3 +18,9 @@ The server/application part will be in Python/Flask. The front-end will be done 
 -1))TitleHeader//SearchtermEntry
 -2))ResultHeader//Resultloop
 -Implement these in Flask first, then think about React
+
+# GIPHY API
+https://developers.giphy.com/docs/
+
+# Flask Guide
+http://flask.pocoo.org/docs/0.12/quickstart/
