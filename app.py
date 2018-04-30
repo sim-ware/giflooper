@@ -1,6 +1,9 @@
 from flask import Flask, request
 from flask import render_template
-import test
+# import test
+import json
+import requests
+import random
 app = Flask(__name__)
 
 
@@ -17,6 +20,15 @@ def index():
 ###############
 @app.route('/resultloop', methods=['POST'])
 def resultloop():
-    # return 'Resultloop'
     searchterms = request.form['searchterms']
-    return render_template('resultloop.html', searchterms=searchterms)
+    r = requests.get(("http://api.giphy.com/v1/gifs/search?q="
+                    + searchterms
+                    + "&api_key=02KjSiPr9Ur2Hizm8HsEdgB0NXPJiNBh&limit=100"))
+    r = r.json()
+    gifs_list = []
+    for x in range(100):
+        a = r['data'][x]['images']['original']['url']
+        gifs_list.append(a)
+    randomers = random.sample(range(100), 25)
+    resultloop = [gifs_list[i] for i in randomers]
+    return render_template('resultloop.html', resultloop=resultloop)

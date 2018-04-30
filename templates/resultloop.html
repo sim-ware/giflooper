@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <head>
   <title>giflooper</title>
+  <script>
+  var images = new Array()
+  images[0] = {{resultloop[1]}};
+  images[1] = {{resultloop[2]}};
+  images[2] = {{resultloop[3]}};
+  setTimeout("changeImage()", 30000);
+  var x=0;
+
+  function changeImage()
+  {
+  document.getElementById("img").src=images[x]
+  x++;
+  }
+  </script>
+
 </head>
 
 <body>
   <h1>GifLooping</h1>
   <p>Here are your searchterms</p>
-  <p>{{ searchterms }}</p
+  <p>{{ resultloop[0] }}</p
   <br>
-  <img src="https://media2.giphy.com/media/xT9IgnIk1Du5nkyn0k/giphy.gif" width="500" height="377">
+  <img src={{ resultloop[0] }} width="500" height="377">
   <br>
   <a href="/giflooper"><input type="button" value="search again"></a>
 </body>
+
+<!-- var images = new Array()
+images[0] = "image1.jpg";
+images[1] = "image2.jpg";
+images[2] = "image3.jpg";
+setTimeout("changeImage()", 30000);
+var x=0;
+
+function changeImage()
+{
+document.getElementById("img").src=images[x]
+x++;
+} -->
