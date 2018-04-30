@@ -1,6 +1,12 @@
 # giflooper
 A looper, for GIFs, for you.
 
+# Git Etiquette, for Frank
+To create a new branch
+```
+$ git checkout -b <feature_branch> master
+```
+
 # To Run
 You must install the requirements!
 ```
