@@ -32,3 +32,10 @@ http://flask.pocoo.org/docs/0.12/quickstart/
 
 ## Current Goal
 -Have the returned array display, rotating the images, on resultloop.html
+
+## Feature Ideas
+-Previous and Next Buttons
+-Pause, display Modal that shows SearchTerms and GIF Link
+
+## Stuff that took ages...
+-Passing a List from Python to <script>tags in HTML Template using Jinja.

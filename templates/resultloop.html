@@ -2,29 +2,37 @@
 <head>
   <title>giflooper</title>
   <script>
-    var resultloop = {{ resultloop|safe }};
+    function displayNextImage() {
+        x = (x === resultloop.length - 1) ? 0 : x + 1;
+        document.getElementById("img").src = resultloop[x];
+    }
+
+    // function displayPreviousImage() {
+    //     x = (x <= 0) ? resultloop.length - 1 : x - 1;
+    //     document.getElementById("img").src = resultloop[x];
+    // }
+
+    function startTimer() {
+        setInterval(displayNextImage, 3000);
+    }
+
+    var resultloop = {{ resultloop|safe }}, x = -1;
+    // var resultloop = {{ resultloop|safe }};
     console.log(resultloop)
   </script>
 
 </head>
 
-<body>
+<body onload="startTimer()">
   <h1>GifLooping</h1>
   <p>Here are your searchterms</p>
-  <p>{{ resultloop[0] }}</p
+  <p>{{ resultloop[-1] }}</p
   <br>
   <img src={{ resultloop[0] }} id="img" width="500" height="377">
   <br>
+  <!-- <button type="button" onclick="displayPreviousImage()">Previous</button>
+  <br>
+  <button type="button" onclick="displayNextImage()">Next</button>
+  <br> -->
   <a href="/giflooper"><input type="button" value="search again"></a>
 </body>
-
-
-
-
-// for (var i = 0, len = 25; i < len; i++) {
-  // console.log(i)
-//   console.log({{ resultloop[i] }})
-//   resultloop.push({{ resultloop[i] }})
-// }
-// resultloop.push("{{ resultloop[0] }}");
-// console.log(resultloop);
