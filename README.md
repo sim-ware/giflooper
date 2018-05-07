@@ -27,6 +27,10 @@ The server/application part will be in Python/Flask. The front-end will be done 
 # GIPHY API
 https://developers.giphy.com/docs/
 
+# GIFs to use
+https://giphy.com/gifs/animated-colors-dwaeIbBnF6HBu
+https://media.giphy.com/media/2FayWIH1xrdlT2wx2/giphy.gif
+
 # Flask Guide
 http://flask.pocoo.org/docs/0.12/quickstart/
 
