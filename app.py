@@ -22,8 +22,8 @@ def resultloop():
     a = Giffer(searchterms)
     a.makeRequest()
     a.jsonifyResult()
-    a.getGifList(20)
+    a.getGifList(50)
     a.shuffleGifs()
     resultloop = a.gifs_list
-    
+
     return render_template('resultloop.html', resultloop=resultloop)
