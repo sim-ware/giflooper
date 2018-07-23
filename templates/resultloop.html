@@ -4,7 +4,6 @@
   <!-- <script src="{{url_for('static', filename='backgroundTimer.js')}}"></script> -->
   <script>
       var resultLoop = {{ resultloop | safe }};
-      var imageHead = document.getElementById("img");
       var i = 0;
       setInterval(function() {
           document.getElementById("img").src = resultLoop[i];
@@ -19,8 +18,8 @@
 
 <body>
   <h1>GifLooping</h1>
-  <p>Here are your searchterms</p>
-  <p>{{ resultloop[-1] }}</p
+  <p>Your searchterms...</p>
+  <p>{{ searchterms }}</p
   <br>
   <img src={{ resultloop[-1] }} id="img" width="500" height="377">
   <br>

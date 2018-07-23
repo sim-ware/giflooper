@@ -26,4 +26,4 @@ def resultloop():
     a.shuffleGifs()
     resultloop = a.gifs_list
 
-    return render_template('resultloop.html', resultloop=resultloop)
+    return render_template('resultloop.html', resultloop=resultloop, searchterms=searchterms)
