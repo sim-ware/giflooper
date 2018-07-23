@@ -4,11 +4,9 @@
   <!-- <script src="{{url_for('static', filename='backgroundTimer.js')}}"></script> -->
   <script>
       var resultLoop = {{ resultloop | safe }};
-      // var resultLoop = {{ resultloop | safe }};
       var imageHead = document.getElementById("img");
       var i = 0;
       setInterval(function() {
-          // imageHead.style.backgroundImage = "url(" + resultloop[i] + ")";
           document.getElementById("img").src = resultLoop[i];
           i = i + 1;
           if (i == resultLoop.length) {
@@ -26,9 +24,5 @@
   <br>
   <img src={{ resultloop[-1] }} id="img" width="500" height="377">
   <br>
-  <!-- <button type="button" onclick="displayPreviousImage()">Previous</button>
-  <br>
-  <button type="button" onclick="displayNextImage()">Next</button>
-  <br> -->
   <a href="/giflooper"><input type="button" value="search again"></a>
 </body>
